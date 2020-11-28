@@ -21,20 +21,19 @@ class _HomeScreenState extends State<HomeScreen> {
     Container(color: Colors.grey)
   ];
 
+  List<BottomNavigationBarItem> _bottomNavigationBarItems = [
+    BottomNavigationBarItem(icon: Icon(CupertinoIcons.placemark), label: ""),
+    BottomNavigationBarItem(icon: Icon(CupertinoIcons.bubble_right), label: ""),
+    BottomNavigationBarItem(icon: Icon(CupertinoIcons.camera), label: ""),
+    BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_2), label: ""),
+    BottomNavigationBarItem(icon: Icon(CupertinoIcons.play), label: "")
+  ];
+
   int _currentIndex = 2;
   final PageStorageBucket bucket = PageStorageBucket();
 
   @override
   Widget build(BuildContext context) {
-    List<BottomNavigationBarItem> _bottomNavigationBarItems = [
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.placemark), label: ""),
-      BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.bubble_right), label: ""),
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.camera), label: ""),
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_2), label: ""),
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.play), label: "")
-    ];
-
     return Scaffold(
       body: PageStorage(bucket: bucket, child: _screens[_currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
