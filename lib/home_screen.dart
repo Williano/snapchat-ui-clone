@@ -37,7 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: PageStorage(bucket: bucket, child: _screens[_currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black.withOpacity(0.8),
+        elevation: 0.0,
         unselectedItemColor: Colors.white,
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
